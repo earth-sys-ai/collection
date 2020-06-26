@@ -1,4 +1,4 @@
-# selection
+# collection
 
 ## **Usage**
 
