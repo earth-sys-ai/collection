@@ -16,7 +16,8 @@ def handle(raw):
     try:
         with open(uid + '.json', 'r') as in_file:
             fs_store = geojson.loads(in_file.read())
-            geojson.FeatureCollection(fs["features"] + fs_store["features"])
+            fs = geojson.FeatureCollection(fs["features"] + fs_store["features"])
+            fs["features"] = fs["features"][0]
     except:
         print()
 
