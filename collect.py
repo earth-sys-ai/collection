@@ -12,13 +12,11 @@ def handle(raw):
     # create feature collection
     fs = geojson.FeatureCollection([data["features"]])
 
-
-    # read from file
+    # add from file
     try:
         with open(uid + '.json', 'r') as in_file:
             fs_store = geojson.loads(in_file.read())
             geojson.FeatureCollection(fs["features"] + fs_store["features"])
-
     except:
         print()
 
